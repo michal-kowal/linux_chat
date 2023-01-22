@@ -107,7 +107,7 @@ void SendMessageToGroup(int queue){
     mes.mtype = 3;
     strcpy(mes.mfrom, user.uname);
     strcpy(mes.mtogroup, sendTo);
-    mes.mid = 0;
+    mes.mid = 1;
     msgsnd(queue, &mes, (sizeof(mes) - sizeof(long)), 0);
     int receive = msgrcv(queue, &mes, (sizeof(mes) - sizeof(long)), server_mes, 0);
     if(receive > 0)
@@ -122,7 +122,7 @@ void SendPublicMessage(int queue){
     scanf("%[^\n]s", mes.mtext);
     mes.mtype = 4;
     strcpy(mes.mfrom, user.uname);
-    mes.mid = 0;
+    mes.mid = 2;
     msgsnd(queue, &mes, (sizeof(mes) - sizeof(long)), 0);
     int receive = msgrcv(queue, &mes, (sizeof(mes) - sizeof(long)), server_mes, 0);
     if(receive > 0)
@@ -137,7 +137,6 @@ void JoinGroup(int queue){
     scanf("%[^\n]s", mes.mtext);
     mes.mtype = 30;
     strcpy(mes.mfrom, user.uname);
-    mes.mid = 0;
     msgsnd(queue, &mes, (sizeof(mes) - sizeof(long)), 0);
     int receive = msgrcv(queue, &mes, (sizeof(mes) - sizeof(long)), server_mes, 0);
     if(receive > 0)
@@ -152,7 +151,6 @@ void LeaveGroup(int queue){
     scanf("%[^\n]s", mes.mtext);
     mes.mtype = 31;
     strcpy(mes.mfrom, user.uname);
-    mes.mid = 0;
     msgsnd(queue, &mes, (sizeof(mes) - sizeof(long)), 0);
     int receive = msgrcv(queue, &mes, (sizeof(mes) - sizeof(long)), server_mes, 0);
     if(receive > 0)
@@ -167,7 +165,6 @@ void BlockGroup(int queue){
     scanf("%[^\n]s", mes.mtext);
     mes.mtype = 32;
     strcpy(mes.mfrom, user.uname);
-    mes.mid = 0;
     msgsnd(queue, &mes, (sizeof(mes) - sizeof(long)), 0);
     int receive = msgrcv(queue, &mes, (sizeof(mes) - sizeof(long)), server_mes, 0);
     if(receive > 0)
@@ -182,7 +179,6 @@ void UnblockGroup(int queue){
     scanf("%[^\n]s", mes.mtext);
     mes.mtype = 33;
     strcpy(mes.mfrom, user.uname);
-    mes.mid = 0;
     msgsnd(queue, &mes, (sizeof(mes) - sizeof(long)), 0);
     int receive = msgrcv(queue, &mes, (sizeof(mes) - sizeof(long)), server_mes, 0);
     if(receive > 0)
