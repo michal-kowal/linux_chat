@@ -4,6 +4,7 @@
 #include <stdio.h>
 #define groups_n 3
 #define users_n 9
+#define groupname_length 25
 #define username_length 25
 #define message_length 1000
 #define server_mes 50
@@ -17,6 +18,7 @@ struct Message{
     char mtext[message_length];
     char mfrom[username_length]; //sender
     long mid;
+    char mtogroup[groupname_length];
     char mto[username_length];
     int send_login_count;
 };
