@@ -19,5 +19,5 @@ Program klienta mozna uruchomic na wielu terminalach wpisujac ```./client```
  - client.c zawiera pelny program klienta
 
 ### Projekt wykonali
-Michal Kowalewski - 149533
-Marcin Lukomski - 151789
+Michal Kowalewski
+Marcin Lukomski 
